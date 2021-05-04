@@ -46,41 +46,43 @@
     <form class="col s12">
       <div class="row">
         <div class="input-field col s6">
-          <input placeholder="Primeiro Nome" id="first_name" type="text" class="validate">
+          <input id="first_name" type="text" class="validate">
           <label for="first_name">Primeiro Nome</label>
         </div>
         <div class="input-field col s6">
           <input id="last_name" type="text" class="validate">
           <label for="last_name">Segundo Nome</label>
         </div>
+      <div class="input-field col s6">
+        <input id="first_number" type="number" class="validate">
+        <label for="first_number">Primeira Nota</label>
       </div>
+      <div class="input-field col s6">
+        <input id="last_number" type="number" class="validate">
+        <label for="last_number">Segunda Nota</label>
+      </div>
+      
       <div class="row">
         <div class="input-field col s12">
-          <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-          <label for="disabled">Disabled</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="password" type="password" class="validate">
-          <label for="password">Telefone</label>
-        </div>
-      </div>
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="email" type="email" class="validate">
-          <label for="email">E-mail</label>
+          <input id="Disciplina" type="text" class="validate">
+          <label for="Disciplina">Disciplina</label>
         </div>
       </div>
       <div class="row">
         <div class="col s12">
-          This is an inline input field:
+          a sua média é:
+          <div id="mostrar_media" class="input-field inline">
+            
+          </div></div>
+      <div class="row">
+        <div class="col s12">
+          situação:    
           <div class="input-field inline">
-            <input id="email" type="email" class="validate">
-            <label for="email" data-error="wrong" data-success="right">Email</label>
+              <input id="media" type="text" class="validate">
+              <label for="media" data-error="wrong" data-success="right"></label>
+              <button onclick="calcular_media()">Calcular</button>
           </div>
-        </div>
-      </div>
+      </div>  
     </form>
   </div>
   _________________________________________________________________________________________<br>
@@ -176,49 +178,13 @@
     _________________________________________________________________________________________<br>
     </h4><h4 style="text-align: center">
     Atividades e Trabalhos<br>
-    Questão 04
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="Primeiro Nome" id="first_name" type="text" class="validate">
-            <label for="first_name">Primeiro Nome</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Segundo Nome</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-            <label for="disabled">Disabled</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Telefone</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">E-mail</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            This is an inline input field:
-            <div class="input-field inline">
-              <input id="email" type="email" class="validate">
-              <label for="email" data-error="wrong" data-success="right">Email</label>
-            </div>
-          </div>
-        </div>
-      </form>
-    </div>
-    _________________________________________________________________________________________<br>
+    Questão 04<br>
+    Primeira nota <input id="nota1" type="number"> <br />
+    Segunda  nota <input id="nota2" type="number"> <br />
+    <button onclick="media()">Calcular Média</button>
+ 
+
+</script>__________________________________________________________________________________<br>
     </h4>
    <footer class="page-footer">
     <div class="container">
@@ -244,6 +210,7 @@
       <a class="grey-text text-lighten-4 right" href="#!">More Links</a>
       </div>
     </div>
-  </footer>    
+  </footer>
+  <script type="text/javascript" src="js/materialize.js"></script>
    </body>
   </html>
