@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-  <html>
+  <html lang="en">
     <head>
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
@@ -29,6 +29,7 @@
 </ul>
 <nav>
   <div class="nav-wrapper">
+    <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
     <a href="#!" class="brand-logo"><img src="img/Vinicius Code-2.png" width="65" height="60"/><img src="img/Vinicius Code-03.png" width="65" height="60"/></a> 
     <ul class="right hide-on-med-and-down">
       <li><a href="index.html">Inicio</a></li>
@@ -42,146 +43,610 @@
 <h4 style="text-align: center">
   Atividades e Trabalhos<br>
   Questão 01
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    h3 {
+      text-decoration: underline;
+      font-weight: 900;
+    }
+
+    li {
+      font-weight: 600;
+    }
+
+    h5 {
+      text-indent: 20px;
+      font-weight: bold;
+    }
+
+    h6 {
+      text-indent: 20px;
+      font-weight: bold;
+    }
+
+    p {
+      text-indent: 50px;
+      font-weight: 500;
+    }
+  </style>
+
+  <script type="text/javascript">
+    function mediacalculada() {
+      var nome = form_calcularmedia.nome.value;
+      var disciplina = form_calcularmedia.disciplina.value;
+      var n1 = form_calcularmedia.n1.value;
+      var n2 = form_calcularmedia.n2.value;
+      var media = (parseFloat(n1) + parseFloat(n2)) / 2;
+
+      if (media <= 3) {
+        document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você foi REPROVADO na disciplina " +
+          disciplina.toUpperCase() + ", com Média " + media;
+      } else if ((media > 3) && (media < 7)) {
+        document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você está de RECUPERAÇÃO na disciplina " +
+          disciplina.toUpperCase() + ", com Média " + media;
+      } else if ((media >= 7) && (media <= 10)) {
+        document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você foi APROVADO na disciplina " +
+          disciplina.toUpperCase() + ", com Média " + media;
+      } else {
+        document.getElementById("demo").innerHTML = "Algo está errado, corrija e tente novamente!!!";
+      }
+    }
+  </script>
+</head>
+  <br>
+  <hr>
+  <h4>Média:</h4>
+  <br>
+  <h5 style="vertical-align:middle;margin:0px 20px">Resolução:</h5>
+  <br>
   <div class="row">
-    <form class="col s12">
+    <form name="form_calcularmedia" id="form_calcularmedia">
       <div class="row">
-        <div class="input-field col s6">
-          <input id="first_name" type="text" class="validate">
-          <label for="first_name">Primeiro Nome</label>
+        <div class="input-field col s4">
+          <input placeholder="Insira o nome" id="nome" name="nome" type="text" class="validate" required>
+          <label>Nome do Aluno:</label>
         </div>
         <div class="input-field col s6">
-          <input id="last_name" type="text" class="validate">
-          <label for="last_name">Segundo Nome</label>
-        </div>
-      <div class="input-field col s6">
-        <input id="first_number" type="number" class="validate">
-        <label for="first_number">Primeira Nota</label>
-      </div>
-      <div class="input-field col s6">
-        <input id="last_number" type="number" class="validate">
-        <label for="last_number">Segunda Nota</label>
-      </div>
-      
-      <div class="row">
-        <div class="input-field col s12">
-          <input id="Disciplina" type="text" class="validate">
-          <label for="Disciplina">Disciplina</label>
+          <input placeholder="Insira a Disciplina" id="disciplina" name="disciplina" type="text" class="validate"
+            required>
+          <label>Disciplina:</label>
         </div>
       </div>
       <div class="row">
-        <div class="col s12">
-          a sua média é:
-          <div id="mostrar_media" class="input-field inline">
-            
-          </div></div>
-      <div class="row">
-        <div class="col s12">
-          situação:    
-          <div class="input-field inline">
-              <input id="media" type="text" class="validate">
-              <label for="media" data-error="wrong" data-success="right"></label>
-              <button onclick="calcular_media()">Calcular</button>
-          </div>
-      </div>  
+        <div class="input-field col s5">
+          <input placeholder="Insira Nota da AV1" id="n1" name="n1" type="number" max="10" min="0" required>
+          <label>Nota AV1:</label>
+        </div>
+        <div class="input-field col s5">
+          <input placeholder="Insira Nota da AV2" id="n2" name="n2" type="number" max="10" min="0" required>
+          <label>Nota AV2:</label>
+        </div>
+      </div>
+      <button style="vertical-align:middle;margin:0px 10px" onclick="mediacalculada()"
+        class="btn btn-outline-primary float-right" type="button">Calcular Média</button>
     </form>
   </div>
-  _________________________________________________________________________________________<br>
+<h4>__________________________________________________________________________________________<br>
   </h4>
   <h4 style="text-align: center">
     Atividades e Trabalhos<br>
-    Questão 02
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="Primeiro Nome" id="first_name" type="text" class="validate">
-            <label for="first_name">Primeiro Nome</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Segundo Nome</label>
-          </div>
+    Questão 02<br>
+    _________________________________________________________<br>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <style>
+        h3 {
+          text-decoration: underline;
+          font-weight: 900;
+        }
+        li {
+          font-weight: 600;
+        }
+        h5 {
+          text-indent: 20px;
+          font-weight: bold;
+        }
+        h6 {
+          text-indent: 20px;
+          font-weight: bold;
+        }
+        p {
+          text-indent: 50px;
+          font-weight: 500;
+        }
+        i.large {
+          font-size: 20px;
+          font-weight: 900;
+        }
+      </style>
+    
+      <script type="text/javascript">
+        function gerarcarne() {
+          var nome = form_carne.nome.value;
+          var codigo = form_carne.codigo.value;
+          var valor = form_carne.valor.value;
+          var qtd = form_carne.qtd.value;
+          var parcela = form_carne.parcela.value;
+          var total = (parseFloat(valor) * parseFloat(qtd))
+    
+          if (parcela == 1) {
+            var totalx = parseFloat(total);
+          } else if (parcela == 2) {
+            var totalx = parseFloat(total) + (parseFloat(total) * 0.03);
+          } else if (parcela == 3) {
+            var totalx = parseFloat(total) + (parseFloat(total) * 0.05);
+          } else if (parcela == 4) {
+            var totalx = parseFloat(total) + (parseFloat(total) * 0.07);
+          } else if (parcela == 5) {
+            var totalx = parseFloat(total) + (parseFloat(total) * 0.09);
+          } else if (parcela == 6) {
+            var totalx = parseFloat(total) + (parseFloat(total) * 0.12);
+          } else {
+            alert("O parcelamento está errado, corrija e tente novamente!!!");
+          }
+    
+          var parcelapg = (totalx / parcela)
+          if (codigo == 3030) {
+            var produto = "NotebooK Dell"
+          } else if (codigo == 6039) {
+            var produto = "Fone Gamer"
+          } else if (codigo == 2523) {
+            var produto = "Teclado RGB"
+          } else if (codigo == 1228) {
+            var produto = "Gabinete Gamer"
+          } else {
+            alert("O Produto está errado, corrijá o código do produto e tente novamente!!!");
+          }
+          for (i = 1; i <= parcela; i++) {
+            document.getElementById("gerar").innerHTML = document.getElementById("gerar").innerHTML +
+              "<br>___________________________________<b>LOJA DE ELETRONICOS</b>___________________________________" +
+              "<br><b>CLIENTE: </b>" + nome.toUpperCase() + "<br><b>PRODUTO: </b>" + produto + "<br><b>VALOR TOTAL: </b>" +
+              total.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+              }) + "<br><b>VALOR TOTAL COM AUMENTO: </b>" +
+              totalx.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+              }) + "<br><b>VALOR DA PARCELA: </b>" +
+              parcelapg.toLocaleString('pt-BR', {
+                style: 'currency',
+                currency: 'BRL'
+              }) + "<br><b>PARCELA: </b>" + i + "/" +
+              parseFloat(parcela) +
+              "<br>_________________________________________________________________________________________________________<br>";
+          }
+        }
+      </script>
+    </head>
+    <body>
+    
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+      <p>Software para Gerar Carnê de Pagamento para Cliente.</p>
+    
+      <h4 style="text-align: center;">LOJA DE ELETRONICOS</h4>
+      <div class="row">
+        <div class="input-field col s1"></div>
+        <div class="input-field col s4">
+          <h4 style="text-align: center;">TABELA DE PRODUTOS</h4>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Código</th>
+                <th scope="col">Produto</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>3030</td><td>NotebooK Dell</td>
+              </tr>
+              <tr>
+                <td>6039</td><td>Fone Gamer</td>
+              </tr>
+              <tr>
+                <td>2523</td><td>Teclado RGB</td>
+              </tr>
+              <tr>
+                <td>1228</td><td>Gabinete Gamer</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-            <label for="disabled">Disabled</label>
-          </div>
+        <div class="input-field col s2"></div>
+        <div class="input-field col s4">
+          <h5 style="text-align: center;">Tabel de porcentagem a ser paga com o aumento</h5>
+          <table class="table table-sm">
+            <thead>
+              <tr>
+                <th scope="col">Parcelamento</th>
+                <th scope="col">Aumento %</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>1x</td>
+                  <td>Sem Aumento</td></tr>
+
+              <tr><td>2x</td>
+                  <td>3</td></tr>
+              
+              <tr><td>3x</td>
+                  <td>5</td></tr>
+
+              <tr><td>4x</td>
+                  <td>7</td></tr>
+              <tr>
+                <td>5x</td>
+                <td>9</td></tr>
+
+              <tr><td>6x</td>
+                  <td>12</td></tr>
+            </tbody>
+          </table>
         </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Telefone</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">E-mail</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            This is an inline input field:
-            <div class="input-field inline">
-              <input id="email" type="email" class="validate">
-              <label for="email" data-error="wrong" data-success="right">Email</label>
+      </div>
+      <h6 style="text-align: center">Segue abaixo a criação do carnê</h6><br>
+      <hr>
+      <br>
+      <h4 style="vertical-align:middle;margin:0px 30px">GERANDO CARNÊ:</h4><br>
+      <div class="row">
+        <form name="form_carne" id="form_carne">
+          <div class="row">
+            <div class="input-field col s1"></div>
+            <div class="input-field col s6">
+              <input placeholder="Insira o nome" id="nome" name="nome" type="text" class="validate" required>
+              <label>Nome do Cliente:</label></div>
+            <div class="input-field col s3">
+              <input placeholder="Insira o código" id="codigo" name="codigo" type="text" class="validate" required>
+              <label>Código do Produto:</label>
             </div>
           </div>
-        </div>
-      </form>
-    </div>________________________________________________________________________________________<br>
+          <div class="row">
+            <div class="input-field col s1"></div>
+            <div class="input-field col s3">
+              <input placeholder="Insira o valor" id="valor" name="valor" type="number" min="0" required>
+              <label>Valor do Produto R$:</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="2" id="qtd" name="qtd" type="number" min="1" required>
+              <label>Quantidade:</label>
+            </div>
+            <div class="input-field col s3">
+              <input placeholder="." id="parcela" name="parcela" type="number" min="1" max="6" required>
+              <label>Parcelamento em até 6x:</label>
+            </div>
+          </div>
+          <button style="vertical-align:middle;margin:0px 120px" onclick="gerarcarne()"
+            class="btn btn-outline-primary float-right" type="button">Gerar</button>
+        </form>
+      </div>
+      <p id="gerar" style="vertical-align:middle;margin:0px 120px"></p>
+      <br><br>
+            </ul>
+          </div>
+    <h4>__________________________________________________________________________________________<br>
     </h4><h4 style="text-align: center">
     Atividades e Trabalhos<br>
-    Questão 03
-    <div class="row">
-      <form class="col s12">
-        <div class="row">
-          <div class="input-field col s6">
-            <input placeholder="Primeiro Nome" id="first_name" type="text" class="validate">
-            <label for="first_name">Primeiro Nome</label>
-          </div>
-          <div class="input-field col s6">
-            <input id="last_name" type="text" class="validate">
-            <label for="last_name">Segundo Nome</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input disabled value="I am not editable" id="disabled" type="text" class="validate">
-            <label for="disabled">Disabled</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="password" type="password" class="validate">
-            <label for="password">Telefone</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s12">
-            <input id="email" type="email" class="validate">
-            <label for="email">E-mail</label>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col s12">
-            This is an inline input field:
-            <div class="input-field inline">
-              <input id="email" type="email" class="validate">
-              <label for="email" data-error="wrong" data-success="right">Email</label>
-            </div>
-          </div>
-        </div>
-      </form>
+    Questão 03<br>
+    _________________________________________________________<br>
+    
+    <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!--Import Google Icon Font-->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <!--Import materialize.css-->
+    <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+
+    <!--Let browser know website is optimized for mobile-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    h3 {
+      text-decoration: underline;
+      font-weight: 900;
+    }
+    li {
+      font-weight: 600;
+    }
+    h5 {
+      text-indent: 20px;
+      font-weight: bold;
+    }
+    h6 {
+      text-indent: 20px;
+      font-weight: bold;
+    }
+    p {
+      text-indent: 50px;
+      font-weight: 500;
+    }
+  </style>
+  <script type="text/javascript">
+    function contra_che() {
+      var nome = form_gc_cheque.nome.value;
+      var cargo = form_gc_cheque.cargo.value;
+      var salario = form_gc_cheque.salario.value;
+
+      var n_sal = "Cargo sem reajuste sálarial";
+
+          if ((cargo == "Atendente") || (cargo == "atendente") || (cargo == "ATENDENTE")) {
+        var aumento = (parseFloat(salario) * 0.08);
+        var n_sal = (parseFloat(salario) + parseFloat(aumento));
+        var aum_per = " (+ 8%)";
+          } else if ((cargo == "Estoquista") || (cargo == "estoquista") || (cargo == "ESTOQUISTA")) {
+        var aumento = (parseFloat(salario) * 0.06);
+        var n_sal = (parseFloat(salario) + parseFloat(aumento));
+        var aum_per = " (+ 6%)";
+          } else if ((cargo == "Gerente") || (cargo == "gerente") || (cargo == "GERENTE")) {
+        var aumento = (parseFloat(salario) * 0.03);
+        var n_sal = (parseFloat(salario) + parseFloat(aumento));
+        var aum_per = " (+ 3%)";
+          } else {
+        var aumento = "Cargo sem aumento!";
+      }
+
+          if (n_sal <= 1045) {
+        var inss = (parseFloat(n_sal) * 0.075);
+        var sal_liq = parseFloat(n_sal) - parseFloat(inss);
+        var perc_inss = " (- 7,5%)";
+          } else if ((n_sal > 1045) && (n_sal <= 2089.6)) {
+        var inss = (parseFloat(n_sal) * 0.09);
+        var sal_liq = parseFloat(n_sal) - parseFloat(inss);
+        var perc_inss = " (- 9%)";
+          } else if ((n_sal > 2089.6) && (n_sal <= 3134.4)) {
+        var inss = (parseFloat(n_sal) * 0.12);
+        var sal_liq = parseFloat(n_sal) - parseFloat(inss);
+        var perc_inss = " (- 12%)";
+          } else {
+        alert("Tente novamente, salário base acima do permitido ou cargo não cadastrado!")
+      }
+      document.getElementById("demo").innerHTML =
+        "<br>______________________________________________ <b>CONTRA CHEQUE</b> ______________________________________________" +
+        "<br><b>FUNCIONÁRIO:</b> " + nome.toUpperCase() +
+        "<br><b>CARGO:</b> " + cargo.toUpperCase() +
+        "<br><br><b>SALÁRIO ATUAL:</b> " + parseFloat(salario).toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }) +
+        "<br><b>AUMENTO SALARIAL:</b> " + aumento.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }) + aum_per +
+        "<br><b>NOVO SALÁRIO:</b> " + n_sal.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }) +
+        "<br><b>DESCONTO INSS:</b> " + inss.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }) + perc_inss +
+        "<br><br><b>SALÁRIO LÍQUIDO:</b> " + sal_liq.toLocaleString('pt-BR', {
+          style: 'currency',
+          currency: 'BRL'
+        }) +
+        "<br>__________________________________________________________________________________________________________________";
+    }
+  </script>
+</head>
+<body>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <h5 style="text-align: center;">Emissão de contra cheque</h5>
+  <div class="row">
+    <div class="input-field col s1"></div>
+    <div class="input-field col s4">
+      <h6 style="text-align: center;">Tabela de cargos</h6>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Cargo</th><th scope="col">Aumento %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Atendente</td>
+            <td>8</td>
+          </tr>
+          <tr>
+            <td>Estoquista</td>
+            <td>6</td>
+          </tr>
+          <tr>
+            <td>Gerente</td>
+            <td>3</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
-    _________________________________________________________________________________________<br>
+
+    <div class="input-field col s1"></div>
+    <div class="input-field col s4">
+      <h6 style="text-align: center;"> Tabela de contribuição do INSS em 2018</h6>
+      <table class="table table-sm">
+        <thead>
+          <tr>
+            <th scope="col">Sálario base</th>
+            <th scope="col">Aliquota INSS %</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>até R$ 1.045,00</td>
+            <td>7,5</td>
+          </tr>
+          <tr>
+            <td>de R$ 1.045,01  até  R$ 2.089,60</td>
+            <td>9</td>
+          </tr>
+          <tr>
+            <td>de R$ 2.089,61  até  R$ 3.134,40</td>
+            <td>12</td>
+          </tr>
+          <tr>
+            <td>acima de R$ 3.134,40</td>
+            <td>14</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <h6 style="text-align: center;">Abaixo você poderá gerar o contra cheque</h6>
+  <hr>
+  <br>
+  <h4 style="vertical-align:middle;margin:0px 30px">Contra Cheque:</h4>
+  <br>
+  <div class="row">
+    <form name="form_gc_cheque" id="form_gc_cheque">
+      <div class="row">
+        <div class="input-field col s1"></div>
+        <div class="input-field col s10">
+          <input placeholder="Nome do Funcionário" id="nome" name="nome" type="text" class="validate" required>
+          <label>Funcionário:</label>
+        </div>
+        <div class="row">
+          <div class="input-field col s2"></div>
+          <div class="input-field col s3">
+            <input placeholder="Insira o cargo do funcionário" id="cargo" name="cargo" type="text" required>
+            <label>Cargo:</label>
+          </div>
+          <div class="input-field col s1"></div>
+          <div class="input-field col s4">
+            <input placeholder="1.100,00" id="salario" name="salario" type="number" min="0" required>
+            <label>Salário(R$):</label>
+          </div>
+        </div>
+        <button style="vertical-align:middle;margin:0px 120px" onclick="contra_che()"
+          class="btn btn-outline-primary float-right" type="button">Gerar Contra Cheque</button>
+    </form>
+  </div>
+  <p id="demo" style="vertical-align:middle;margin:0px 120px"></p>
+  <br><br>
+   <h4>__________________________________________________________________________________________<br>
     </h4><h4 style="text-align: center">
     Atividades e Trabalhos<br>
     Questão 04<br>
-    Primeira nota <input id="nota1" type="number"> <br />
-    Segunda  nota <input id="nota2" type="number"> <br />
-    <button onclick="media()">Calcular Média</button>
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <!--Import Google Icon Font-->
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css" media="screen,projection" />
+    
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Q04_TrabalhoWEB</title>
+    
+      <style>
+        h3 {
+          text-decoration: underline;
+          font-weight: 900;
+        }
+    
+        li {
+          font-weight: 600;
+        }
+    
+        h5 {
+          text-indent: 20px;
+          font-weight: bold;
+        }
+    
+        h6 {
+          text-indent: 20px;
+          font-weight: bold;
+        }
+    
+        p {
+          text-indent: 50px;
+          font-weight: 500;
+        }
+      </style>
+    
+      <script type="text/javascript">
+        function calcularimc() {
+          var nome = form_imc.nome.value;
+          var peso = form_imc.peso.value;
+          var altura = form_imc.altura.value;
+          var imc = (parseFloat(peso) / (parseFloat(altura) * parseFloat(altura)));
+    
+          if (imc < 18.5) {
+            var obesidade = "<b>Baixo Peso.</b>";
+            var proplema = "<b>Peso baixo para a altura. Maior probabilidade de anorexia.</b>";
+          } else if ((imc >= 18.5) && (imc < 25)) {
+            var obesidade = "<b>Peso Normal.</b>";
+            var problema = "<b>Maior probabilidade de ser um indivíduo saudável.</b>";
+          } else if ((imc >= 25) && (imc < 30)) {
+            var obesidade = "<b>Pré-obesidade.</b>";
+            var problema = "<b>Alguma probabilidade de problemas de saúde. Pré-disposição a torna-se obeso.</b>";
+          } else if ((imc >= 30) && (imc < 35)) {
+            var obesidade = "<b>Obesidade Grau I.</b>";
+            var problema = "<b>Risco moderado de disbetes tipo II, hipertensão, colesterol e cardiopatia.</b>";
+          } else if ((imc >= 35) && (imc < 40)) {
+            var obesidade = "<b>Obesidade Grau II.</b>";
+            var problema = "<b>Risco grave. Aumenta o risco de doenças associadas. O risco de mortalidade aumenta 50%.</b>";
+          } else {
+            var obesidade = "<b>Obesidade Grau III ou obesidade mórbida.</b>";
+            var problema = "<b>Risco Muito Grave. O risco de doenças associadas assim como a mortalidade aumenta 90%.</b>";
+          }
+    
+          document.getElementById("mostrar").innerHTML =
+            "<br>------------------------------------------------------------------------------------------------------------------------" +
+            "<br><b>RESULTADO - IMC</b>" +
+            "<br><br><b>PACIENTE: </b>" + nome.toUpperCase() +
+            "<br><b>PESO: </b>" + peso + " Kg" +
+            "<br><b>ALTURA: </b>" + altura + " Metros" +
+            "<br><b>IMC: </b>" + imc +
+            "<br><br>Olá " + nome.toUpperCase() + ", você está no nível de obesidade: <br>" + obesidade +
+            "<br> Com este nível de IMC você está propenso a apresentar os seguintes problemas de saúde: <br>" + problema +
+            "<br>------------------------------------------------------------------------------------------------------------------------";
+    
+        }
+      </script>
+    </head>
+    <body>
+      <!--JavaScript at end of body for optimized loading-->
+      <script type="text/javascript" src="js/materialize.min.js"></script>   
+      <hr>
+      <p>Software que calcula o IMC (Índice de Massa Corporal) de qualquer pessoa.</p>
+      <hr>
+      <br>
+      <h5 style="vertical-align:middle;margin:0px 20px">Resolução:</h5>
+      <br>
+      <p>Insira as Informações para calcular o seu IMC:</p>
+      <br>
+      <div class="row">
+        <form name="form_imc" id="form_imc">
+          <div class="row">
+            <div class="input-field col s1"></div>
+            <div class="input-field col s10">
+              <input placeholder="Nome" id="nome" name="nome" type="text" class="validate" required>
+              <label>Paciente:</label>
+            </div>
+            <div class="row">
+              <div class="input-field col s2"></div>
+              <div class="input-field col s3">
+                <input placeholder="86" id="peso" name="peso" type="number" min="0" required>
+                <label>Peso(Kg):</label>
+              </div>
+              <div class="input-field col s1"></div>
+              <div class="input-field col s4">
+                <input placeholder="1,62" id="altura" name="altura" type="number" min="0" required>
+                <label>Altura(m):</label>
+              </div>
+            </div>
+            <button style="vertical-align:middle;margin:0px 120px" onclick="calcularimc()"
+              class="btn btn-outline-primary float-right" type="button">Calcular</button>
+        </form>
  
 
 </script>__________________________________________________________________________________<br>
@@ -191,7 +656,7 @@
       <div class="row">
         <div class="col l6 s12">
           <h5 class="white-text">Fale conosco</h5>
-          <p class="grey-text text-lighten-4">Segue-se a frente alguns links para contato.</p>
+         <p class="grey-text text-lighten-4">Segue-se a frente alguns links para contato.</p>
         </div>
         <div class="col l4 offset-l2 s12">
           <h5 class="white-text">Links</h5>
