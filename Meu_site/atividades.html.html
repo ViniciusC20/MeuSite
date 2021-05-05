@@ -43,6 +43,7 @@
     <ul id="nav-mobile" class="right hide-on-med-and-down"></ul>
     <a href="#!" class="brand-logo"><img src="img/Vinicius Code-2.png" width="65" height="60"/><img src="img/Vinicius Code-03.png" width="65" height="60"/></a> 
     <ul class="right hide-on-med-and-down">
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="index.html">Inicio</a></li>
       <li><a href="sobre.html">Sobre mim</a></li>
       <li><a href="contatos.html">Contatos</a></li>
@@ -89,16 +90,16 @@
       var n2 = form_calcularmedia.n2.value;
       var media = (parseFloat(n1) + parseFloat(n2)) / 2;
 
-      if (media <= 3) {
+          if (media <= 3) {
         document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você foi REPROVADO na disciplina " +
           disciplina.toUpperCase() + ", com Média " + media;
-      } else if ((media > 3) && (media < 7)) {
+          } else if ((media > 3) && (media < 7)) {
         document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você está de RECUPERAÇÃO na disciplina " +
           disciplina.toUpperCase() + ", com Média " + media;
-      } else if ((media >= 7) && (media <= 10)) {
+          } else if ((media >= 7) && (media <= 10)) {
         document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você foi APROVADO na disciplina " +
           disciplina.toUpperCase() + ", com Média " + media;
-      } else {
+          } else {
         document.getElementById("demo").innerHTML = "Algo está errado, corrija e tente novamente!!!";
       }
     }
@@ -186,35 +187,35 @@
           var parcela = form_carne.parcela.value;
           var total = (parseFloat(valor) * parseFloat(qtd))
     
-          if (parcela == 1) {
+              if (parcela == 1) {
             var totalx = parseFloat(total);
-          } else if (parcela == 2) {
+              } else if (parcela == 2) {
             var totalx = parseFloat(total) + (parseFloat(total) * 0.03);
-          } else if (parcela == 3) {
+              } else if (parcela == 3) {
             var totalx = parseFloat(total) + (parseFloat(total) * 0.05);
-          } else if (parcela == 4) {
+              } else if (parcela == 4) {
             var totalx = parseFloat(total) + (parseFloat(total) * 0.07);
-          } else if (parcela == 5) {
+              } else if (parcela == 5) {
             var totalx = parseFloat(total) + (parseFloat(total) * 0.09);
-          } else if (parcela == 6) {
+              } else if (parcela == 6) {
             var totalx = parseFloat(total) + (parseFloat(total) * 0.12);
-          } else {
+              } else {
             alert("O parcelamento está errado, corrija e tente novamente!!!");
           }
     
           var parcelapg = (totalx / parcela)
-          if (codigo == 3030) {
+              if (codigo == 3030) {
             var produto = "NotebooK Dell"
-          } else if (codigo == 6039) {
+              } else if (codigo == 6039) {
             var produto = "Fone Gamer"
-          } else if (codigo == 2523) {
+              } else if (codigo == 2523) {
             var produto = "Teclado RGB"
-          } else if (codigo == 1228) {
+              } else if (codigo == 1228) {
             var produto = "Gabinete Gamer"
-          } else {
+              } else {
             alert("O Produto está errado, corrijá o código do produto e tente novamente!!!");
           }
-          for (i = 1; i <= parcela; i++) {
+              for (i = 1; i <= parcela; i++) {
             document.getElementById("gerar").innerHTML = document.getElementById("gerar").innerHTML +
               "<br>___________________________________<b>LOJA DE ELETRONICOS</b>___________________________________" +
               "<br><b>CLIENTE: </b>" + nome.toUpperCase() + "<br><b>PRODUTO: </b>" + produto + "<br><b>VALOR TOTAL: </b>" +
@@ -582,22 +583,22 @@
           var altura = form_imc.altura.value;
           var imc = (parseFloat(peso) / (parseFloat(altura) * parseFloat(altura)));
     
-          if (imc < 18.5) {
+              if (imc < 18.5) {
             var obesidade = "<b>Baixo Peso.</b>";
             var proplema = "<b>Peso baixo para a altura. Maior probabilidade de anorexia.</b>";
-          } else if ((imc >= 18.5) && (imc < 25)) {
+              } else if ((imc >= 18.5) && (imc < 25)) {
             var obesidade = "<b>Peso Normal.</b>";
             var problema = "<b>Maior probabilidade de ser um indivíduo saudável.</b>";
-          } else if ((imc >= 25) && (imc < 30)) {
+              } else if ((imc >= 25) && (imc < 30)) {
             var obesidade = "<b>Pré-obesidade.</b>";
             var problema = "<b>Alguma probabilidade de problemas de saúde. Pré-disposição a torna-se obeso.</b>";
-          } else if ((imc >= 30) && (imc < 35)) {
+              } else if ((imc >= 30) && (imc < 35)) {
             var obesidade = "<b>Obesidade Grau I.</b>";
             var problema = "<b>Risco moderado de disbetes tipo II, hipertensão, colesterol e cardiopatia.</b>";
-          } else if ((imc >= 35) && (imc < 40)) {
+              } else if ((imc >= 35) && (imc < 40)) {
             var obesidade = "<b>Obesidade Grau II.</b>";
             var problema = "<b>Risco grave. Aumenta o risco de doenças associadas. O risco de mortalidade aumenta 50%.</b>";
-          } else {
+              } else {
             var obesidade = "<b>Obesidade Grau III ou obesidade mórbida.</b>";
             var problema = "<b>Risco Muito Grave. O risco de doenças associadas assim como a mortalidade aumenta 90%.</b>";
           }
@@ -648,7 +649,7 @@
             </div>
             <button style="vertical-align:middle;margin:0px 120px" onclick="calcularimc()"
               class="btn btn-outline-primary float-right" type="button">Calcular</button>
-        </form>
+        </form><br><br>
 
    <footer class="page-footer">
     <div class="container">
