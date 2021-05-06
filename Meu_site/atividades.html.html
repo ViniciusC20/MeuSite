@@ -71,63 +71,67 @@
     }
   </style>
 
-<script type="text/javascript">
-  function calc_med() {
-    var nome = form_nota.nome.value;
-    var nt_um = form_nota.nt_um.value;
-    var nt_dois = form_nota.nt_dois.value;
-    var med = (parseFloat(nt_um) + (parseFloat(nt_dois) * parseFloat(nt_dois)/3));
+  <script type="text/javascript">
+    function mediacalc() {
+      var nome = form_calcmed.nome.value;
+      var disc = form_calcmed.disc.value;
+      var not1 = form_calcmed.not1.value;
+      var not2 = form_calcmed.not2.value;
+      var media = (parseFloat(not1) + parseFloat(not2)) / 2;
 
-       if (med < 6) {
-      var nt_um = "<b>reprovado.</b>";
-      var nt_dois = "<b>Sua nota foi muito baixa, estude mais para tentar compensar</b>";
-       } else if ((med >= 7) && (med < 10)) {
-      var nt_um = "<b>Aprovado.</b>";
-      var nt_dois = "<b>Parabéns sua nota foi excelente, continue assim.</b>";
-     }
-
-    document.getElementById("mostrar").innerHTML =
-      "<br>_________________________________________________________________________________________________________________________" +
-      "<br><b>Média</b>" +
-      "<br><br><b>Aluno: </b>" + nome.toUpperCase() +
-      "<br><b>Nota um: </b>" + nt_um + " !!!" +
-      "<br><b>Nota dois: </b>" + nt_dois + " essa foi a sua nota" +
-      "<br><b>Sua média é: </b>" + med +
-      "<br><br>Olá " + nome.toUpperCase() + ",a sua média é é: <br>" + nt_um +
-      "<br> Com este nível de IMC você está propenso a ter: <br>" + nt_dois +
-      "<br>_________________________________________________________________________________________________________________________";
+            if (media <= 3) {
+        document.getElementById("demo").innerHTML = nome.toUpperCase() + ", sinto muito, mas você foi reprovado nesta disciplina " +
+        disc.toUpperCase() + ", com Média " + media;
+         } else if ((media > 3) && (media < 7)) {
+        document.getElementById("demo").innerHTML = nome.toUpperCase() + ",sinto muito, mas você está de recuperação nesta disciplina " +
+        disc.toUpperCase() + ", com Média " + media;
+         } else if ((media >= 7) && (media <= 10)) {
+        document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você foi aprovado na disciplina, meus Parabéns  " +
+        disc.toUpperCase() + ", com Média " + media;
+         } else {
+        document.getElementById("demo").innerHTML = "Algo está errado, corrija e tente novamente!!!";
       }
-</script>
+    }
+  </script>
 </head>
+
 <body>
-<!--JavaScript at end of body for optimized loading-->
-<script type="text/javascript" src="js/materialize.min.js"></script>
-<h5 style="vertical-align:middle;margin:0px 90px">Adicione as Informações para calcular a média:</h5>
-<br>
-<div class="row">
-  <form name="form_nota" id="form_nota">
-    <div class="row">
-      <div class="input-field col s1"></div>
-      <div class="input-field col s10">
-        <input placeholder="Nome" id="nome" name="nome" type="text" class="validate" required>
-        <label>Aluno:</label>
+  <!--JavaScript at end of body for optimized loading-->
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <h4 style="vertical-align:middle;margin:0px 15px">Média:</h4>
+  <br>
+
+  <div class="row">
+    <form name="form_calcmed" id="form_calcmed">
+      <div class="row">
+        <div class="input-field col s4">
+          <input placeholder="Insira o nome do aluno" id="nome" name="nome" type="text" class="validate" required>
+          <label>Aluno:</label>
+        </div>
+        <div class="input-field col s6">
+          <input placeholder="Insira a Disciplina" id="disc" name="disciplina" type="text" class="validate"
+            required>
+          <label>Disciplina:</label>
+        </div>
       </div>
       <div class="row">
-        <div class="input-field col s2"></div>
-        <div class="input-field col s3">
-          <input placeholder="10" id="Primeira nota" name="Nota" type="number" min="0" required>
-          <label>1° Nota:</label>
+        <div class="input-field col s5">
+          <input placeholder="Insira a primeira nota" id="not1" name="not1" type="number" max="10" min="0" required>
+          <label>Primeira Nota:</label>
         </div>
-        <div class="input-field col s1"></div>
-        <div class="input-field col s4">
-          <input placeholder="10" id="Segunda nota" name="Nota 2" type="number" min="0" required>
-          <label>2° Nota:</label>
+        <div class="input-field col s5">
+          <input placeholder="Insira a segunda nota" id="not2" name="not2" type="number" max="10" min="0" required>
+          <label>Segunda Nota:</label>
         </div>
       </div>
-      <button style="vertical-align:middle;margin:0px 120px" onclick="calc_med()"
-        class="btn btn-outline-primary float-right" type="button">Calcular</button>
-  </form>
-</div>
+      <button style="vertical-align:middle;margin:0px 10px" onclick="mediacalc()"
+        class="btn btn-outline-primary float-right" type="button">Calcular Média</button>
+    </form>
+  </div>
+  <br>
+  <p id="demo"></p>
+  <br><br>
+
 <hr><br>
   <h4 style="text-align: center;">
   Atividades e Trabalhos<br>
