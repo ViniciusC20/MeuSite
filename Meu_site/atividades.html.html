@@ -80,16 +80,16 @@
       var media = (parseFloat(not1) + parseFloat(not2)) / 2;
 
             if (media <= 3) {
-        document.getElementById("demo").innerHTML = nome.toUpperCase() + ", sinto muito, mas você foi reprovado nesta disciplina " +
+        document.getElementById("demo1").innerHTML = nome.toUpperCase() + ", sinto muito, mas você foi reprovado nesta disciplina " +
         disc.toUpperCase() + ", com Média " + media;
          } else if ((media > 3) && (media < 7)) {
-        document.getElementById("demo").innerHTML = nome.toUpperCase() + ",sinto muito, mas você está de recuperação nesta disciplina " +
+        document.getElementById("demo1").innerHTML = nome.toUpperCase() + ",sinto muito, mas você está de recuperação nesta disciplina " +
         disc.toUpperCase() + ", com Média " + media;
          } else if ((media >= 7) && (media <= 10)) {
-        document.getElementById("demo").innerHTML = nome.toUpperCase() + ", você foi aprovado na disciplina, meus Parabéns  " +
+        document.getElementById("demo1").innerHTML = nome.toUpperCase() + ", você foi aprovado na disciplina " +
         disc.toUpperCase() + ", com Média " + media;
          } else {
-        document.getElementById("demo").innerHTML = "Algo está errado, corrija e tente novamente!!!";
+        document.getElementById("demo1").innerHTML = "Erro, favor preencha os campos";
       }
     }
   </script>
@@ -129,10 +129,10 @@
     </form>
   </div>
   <br>
-  <p id="demo"></p>
+  <p id="demo1"></p>
   <br><br>
-
 <hr><br>
+
   <h4 style="text-align: center;">
   Atividades e Trabalhos<br>
   Questão 02<br></h4>
@@ -393,7 +393,6 @@
           } else {
         var aumento = "Cargo sem aumento!";
       }
-
           if (n_sal <= 1045) {
         var inss = (parseFloat(n_sal) * 0.075);
         var sal_liq = parseFloat(n_sal) - parseFloat(inss);
@@ -409,7 +408,7 @@
           } else {
         alert("Tente novamente, salário base acima do permitido ou cargo não cadastrado!")
       }
-      document.getElementById("demo").innerHTML =
+      document.getElementById("demo3").innerHTML =
       "<br>__________________________________________________________________________________________________________________" +
         "<br><b>FUNCIONÁRIO:</b> " + nome.toUpperCase() +
         "<br><b>CARGO:</b> " + cargo.toUpperCase() +
@@ -526,9 +525,11 @@
           class="btn btn-outline-primary float-right" type="button">Gerar Contra Cheque</button>
     </form>
   </div>
-  <p id="demo" style="vertical-align:middle;margin:0px 120px"></p>
-  <br><br>
-   <hr><br>
+  <p id="demo3" style="vertical-align:middle;margin:0px 120px"></p>
+  <br>
+  <br>
+
+   <hr><br> 
    <h4 style="text-align: center">
     Atividades e Trabalhos<br>
     Questão 04<br>
