@@ -4,6 +4,7 @@
       <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
       <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
       <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+      <meta charset="utf-8"/>
       <title> Atividades </title>
       <link rel="shortcut icon" href="img/Vinicius Code-2.png">
       
@@ -34,7 +35,7 @@
     <ul class="right hide-on-med-and-down">
       <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="index.html">Inicio</a></li>
-      <li><a href="sobre.html">Sobre mim</a></li>
+      <li><a href="sobre.html">Curriculo</a></li>
       <li><a href="contatos.html">Contatos</a></li>
       <!-- Dropdown Trigger -->
       <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Redes Sociais<i class="material-icons right">arrow_drop_down</i></a></li>
@@ -80,16 +81,16 @@
       var media = (parseFloat(not1) + parseFloat(not2)) / 2;
 
             if (media <= 3) {
-        document.getElementById("demo1").innerHTML = nome.toUpperCase() + ", sinto muito, mas você foi reprovado nesta disciplina " +
+        document.getElementById("atvd1").innerHTML = nome.toUpperCase() + ", sinto muito, mas você foi reprovado nesta disciplina " +
         disc.toUpperCase() + ", com Média " + media;
          } else if ((media > 3) && (media < 7)) {
-        document.getElementById("demo1").innerHTML = nome.toUpperCase() + ",sinto muito, mas você está de recuperação nesta disciplina " +
+        document.getElementById("atvd1").innerHTML = nome.toUpperCase() + ",sinto muito, mas você está de recuperação nesta disciplina " +
         disc.toUpperCase() + ", com Média " + media;
          } else if ((media >= 7) && (media <= 10)) {
-        document.getElementById("demo1").innerHTML = nome.toUpperCase() + ", você foi aprovado na disciplina " +
+        document.getElementById("atvd1").innerHTML = nome.toUpperCase() + ", você foi aprovado na disciplina " +
         disc.toUpperCase() + ", com Média " + media;
          } else {
-        document.getElementById("demo1").innerHTML = "Erro, favor preencha os campos";
+        document.getElementById("atvd1").innerHTML = "Erro, favor preencha os campos";
       }
     }
   </script>
@@ -129,7 +130,7 @@
     </form>
   </div>
   <br>
-  <p id="demo1"></p>
+  <p id="atvd1"></p>
   <br><br>
 <hr><br>
 
@@ -408,7 +409,7 @@
           } else {
         alert("Tente novamente, salário base acima do permitido ou cargo não cadastrado!")
       }
-      document.getElementById("demo3").innerHTML =
+      document.getElementById("atvd3").innerHTML =
       "<br>__________________________________________________________________________________________________________________" +
         "<br><b>FUNCIONÁRIO:</b> " + nome.toUpperCase() +
         "<br><b>CARGO:</b> " + cargo.toUpperCase() +
@@ -525,7 +526,7 @@
           class="btn btn-outline-primary float-right" type="button">Gerar Contra Cheque</button>
     </form>
   </div>
-  <p id="demo3" style="vertical-align:middle;margin:0px 120px"></p>
+  <p id="atvd3" style="vertical-align:middle;margin:0px 120px"></p>
   <br>
   <br>
 
